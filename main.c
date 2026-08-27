@@ -13,7 +13,12 @@ int main(void) {
             run = 0;
             printf("Goodbye.");
         } else if (strstr(buffer, "ADD") != NULL) {
-            
+            char *token = strtok(buffer, ",");
+            char *id = strtok(NULL, ",");
+            char *name = strtok(NULL, ",");
+            char *qty = strtok(NULL, ",");
+            char *price = strtok(NULL, ",");
+            add (id, name, qty, price);
         }
     }
     return 0;
