@@ -1,6 +1,20 @@
 #include <stdio.h>
+#include <string.h>
+#include "inventory.h"
 
 int main(void) {
-    printf("Hello World");
+    int run = 1;
+    while (run) {
+        char buffer[48];
+        printf("> ");
+        fgets(buffer, sizeof(buffer), stdin);
+        buffer[strcspn(buffer, "\n")] = '\0';
+        if (strcmp(buffer, "EXIT") == 0) {
+            run = 0;
+            printf("Goodbye.");
+        } else if (strstr(buffer, "ADD") != NULL) {
+            
+        }
+    }
     return 0;
 }
