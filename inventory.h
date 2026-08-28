@@ -1,6 +1,6 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
-void add (char *id, char *name, char *qty, char *price);
+void add (int id, char *name, int qty, double price);
 
 #endif

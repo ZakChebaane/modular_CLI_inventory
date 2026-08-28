@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "inventory.h"
 
@@ -14,10 +15,10 @@ int main(void) {
             printf("Goodbye.");
         } else if (strstr(buffer, "ADD") != NULL) {
             char *token = strtok(buffer, ",");
-            char *id = strtok(NULL, ",");
+            int id = strtol(strtok(NULL, ","), NULL, 10);
             char *name = strtok(NULL, ",");
-            char *qty = strtok(NULL, ",");
-            char *price = strtok(NULL, ",");
+            int qty = strtol(strtok(NULL, ","), NULL, 10);
+            double price = strtod((strtok(NULL, ",")), NULL);
             add (id, name, qty, price);
         }
     }

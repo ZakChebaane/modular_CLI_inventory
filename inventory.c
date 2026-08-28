@@ -1,6 +1,6 @@
 #include "inventory.h"
 #include <stdio.h>
 
-void add (char *id, char *name, char *qty, char *price) {
-    printf("%s\n%s\n%s\n%s\n", id, name, qty, price);
+void add (int id, char *name, int qty, double price) {
+    printf("%d\n%s\n%d\n%lf\n", id, name, qty, price);
 }
