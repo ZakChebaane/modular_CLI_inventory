@@ -19,7 +19,14 @@ void add (Item *items, int *count, int id, char *name, int qty, double price) {
     strncpy(items[*count].name, name, NAME_LEN);
     items[*count].qty = qty;
     items[*count].price = price;
+    printf("[SUCCESS] Added %s (ID: %d)\n", items[*count].name, items[*count].id);
     *count += 1;
-    printf("%d %s %d %lf\n", items[0].id, items[0].name, items[0].qty, items[0].price);
-    printf("%d %s %d %lf\n", items[1].id, items[1].name, items[1].qty, items[1].price);
+}
+void list (Item *items, int *count) {
+    // Lists out the items
+    printf("ID    NAME             QTY    PRICE   \n");
+    printf("--------------------------------------\n");
+    for (int i = 0; i < *count; i++) {
+        printf("%d   %s          %d         %.1lf  \n", items[i].id, items[i].name, items[i].qty, items[i].price);
+    }
 }

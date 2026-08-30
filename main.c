@@ -22,6 +22,8 @@ int main(void) {
             int qty = strtol(strtok(NULL, ","), NULL, 10);
             double price = strtod((strtok(NULL, ",")), NULL);
             add (items, &count, id, name, qty, price);
+        } else if (strstr(buffer, "LIST") != NULL) {
+            list(items, &count);
         }
     }
     return 0;

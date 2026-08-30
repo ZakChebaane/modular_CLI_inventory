@@ -12,5 +12,6 @@ typedef struct {
 } Item;
 
 void add (Item *items, int *count, int id, char *name, int qty, double price);
+void list (Item *items, int *count);
 
 #endif
