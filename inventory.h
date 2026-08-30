@@ -1,6 +1,16 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
-void add (int id, char *name, int qty, double price);
+#define MAX_ITEMS 50
+#define NAME_LEN 32
+
+typedef struct {
+    double price;
+    int id;
+    int qty;
+    char name[NAME_LEN];
+} Item;
+
+void add (Item *items, int *count, int id, char *name, int qty, double price);
 
 #endif
