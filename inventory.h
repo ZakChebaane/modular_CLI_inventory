@@ -14,5 +14,6 @@ typedef struct {
 void add (Item *items, int *count, int id, char *name, int qty, double price);
 void list (Item *items, int *count);
 void stock (Item *items, int *count, int id, int newQty);
+void find (Item *items, int *count, int id);
 
 #endif

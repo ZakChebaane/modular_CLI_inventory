@@ -27,6 +27,9 @@ int main(void) {
         } else if (strstr(buffer, "STOCK") != NULL) {
             strtok(buffer, ",");
             stock(items, &count, strtol(strtok(NULL, ","), NULL, 10), strtol(strtok(NULL, ","), NULL, 10));
+        } else if (strstr(buffer, "FIND") != NULL) {
+            strtok(buffer, ",");
+            find(items, &count, strtol(strtok(NULL, ","), NULL, 10));
         }
     }
     return 0;

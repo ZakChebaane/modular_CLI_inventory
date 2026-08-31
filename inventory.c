@@ -40,6 +40,15 @@ void stock (Item *items, int *count, int id, int newQty) {
     }
     printf("[FAILED] (ID:%d) does not exist\n", id);
 }
+void find (Item *items, int *count, int id) {
+    for (int i = 0; i < *count; i++) {
+        if (items[i].id == id) {
+            printf("ID: %d   NAME: %s   Quantity: %d   Price: %.2f\n", items[i].id, items[i].name, items[i].qty, items[i].price);
+            return;
+        }
+    }
+    printf("[FAILED] (ID:%d) does not exist\n", id);
+}
 
 // ADD,101,Apples,2,2.50
 // ADD,102,Oranges,4,3.75
