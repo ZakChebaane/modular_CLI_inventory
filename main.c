@@ -24,6 +24,9 @@ int main(void) {
             add (items, &count, id, name, qty, price);
         } else if (strstr(buffer, "LIST") != NULL) {
             list(items, &count);
+        } else if (strstr(buffer, "STOCK") != NULL) {
+            strtok(buffer, ",");
+            stock(items, &count, strtol(strtok(NULL, ","), NULL, 10), strtol(strtok(NULL, ","), NULL, 10));
         }
     }
     return 0;

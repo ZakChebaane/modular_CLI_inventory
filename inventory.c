@@ -30,3 +30,16 @@ void list (Item *items, int *count) {
         printf("%d   %s          %d         %.1lf  \n", items[i].id, items[i].name, items[i].qty, items[i].price);
     }
 }
+void stock (Item *items, int *count, int id, int newQty) {
+    for (int i = 0; i < *count; i++) {
+        if (items[i].id == id) {
+            items[i].qty = newQty;
+            printf("[SUCCESS] %s stock updated to: %d\n", items[i].name, items[i].qty);
+            return;
+        }
+    }
+    printf("[FAILED] (ID:%d) does not exist\n", id);
+}
+
+// ADD,101,Apples,2,2.50
+// ADD,102,Oranges,4,3.75
