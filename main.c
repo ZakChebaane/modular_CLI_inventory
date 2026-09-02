@@ -30,6 +30,11 @@ int main(void) {
         } else if (strstr(buffer, "FIND") != NULL) {
             strtok(buffer, ",");
             find(items, &count, strtol(strtok(NULL, ","), NULL, 10));
+        } else if (strstr(buffer, "DISCOUNT") != NULL) {
+            strtok(buffer, ",");
+            int inputId = strtol(strtok(NULL, ","), NULL, 10);
+            int inputDiscount = strtod(strtok(NULL, ","), NULL);
+            discount(items, &count, inputId, inputDiscount / 100.00);
         }
     }
     return 0;

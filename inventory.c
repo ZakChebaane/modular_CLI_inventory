@@ -49,6 +49,19 @@ void find (Item *items, int *count, int id) {
     }
     printf("[FAILED] (ID:%d) does not exist\n", id);
 }
+void discount (Item *items, int *count, int id, double discount) {
+    printf("%.2f\n", discount);
+    for (int i = 0; i < *count; i++) {
+        if (items[i].id == id) {
+            double takeAway = items[i].price * discount;
+            items[i].price -= takeAway;
+            printf("[SUCCESS] %s new price: £%.2f\n", items[i].name, items[i].price);
+            return;
+        }
+    }
+    printf("[FAILED] (ID: %d) does not exist\n", id);
+}
 
 // ADD,101,Apples,2,2.50
 // ADD,102,Oranges,4,3.75
+// ADD,103,Zak,1,100
