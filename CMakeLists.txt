@@ -3,6 +3,8 @@ project(modular_CLI_inventory C)
 
 set(CMAKE_C_STANDARD 11)
 
+add_compile_options(-Wall -Wextra -pedantic)
+
 add_executable(modular_CLI_inventory
         main.c
         inventory.h
