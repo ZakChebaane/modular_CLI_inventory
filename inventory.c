@@ -27,7 +27,7 @@ void list (Item *items, int *count) {
     printf("ID    NAME             QTY    PRICE   \n");
     printf("--------------------------------------\n");
     for (int i = 0; i < *count; i++) {
-        printf("%d   %s          %d         %.1lf  \n", items[i].id, items[i].name, items[i].qty, items[i].price);
+        printf("%d   %s          %d         %.2lf  \n", items[i].id, items[i].name, items[i].qty, items[i].price);
     }
 }
 void stock (Item *items, int *count, int id, int newQty) {
@@ -50,7 +50,6 @@ void find (Item *items, int *count, int id) {
     printf("[FAILED] (ID:%d) does not exist\n", id);
 }
 void discount (Item *items, int *count, int id, double discount) {
-    printf("%.2f\n", discount);
     for (int i = 0; i < *count; i++) {
         if (items[i].id == id) {
             double takeAway = items[i].price * discount;
